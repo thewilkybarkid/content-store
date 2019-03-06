@@ -17,6 +17,8 @@
         "php": "^7.3",
         "ext-ctype": "*",
         "ext-mbstring": "*",
+        "libero/api-problem-bundle": "^0.2",
+        "libero/content-api-bundle": "^0.1",
         "symfony/config": "^4.2",
         "symfony/console": "^4.2",
         "symfony/dependency-injection": "^4.2",
@@ -26,6 +28,7 @@
         "symfony/http-kernel": "^4.2",
         "symfony/monolog-bundle": "^3.3",
         "symfony/routing": "^4.2",
+        "symfony/translation": "^4.2",
         "symfony/yaml": "^4.2"
     },
     "require-dev": {
@@ -35,7 +38,8 @@
         "phpunit/phpunit": "^8.0",
         "symfony/debug": "^4.2",
         "symfony/twig-bundle": "^4.2",
-        "symfony/web-profiler-bundle": "^4.2"
+        "symfony/web-profiler-bundle": "^4.2",
+        "thomasweinert/phpunit-xpath-assertions": "dev-master"
     },
     "replace": {
         "symfony/polyfill-ctype": "*",

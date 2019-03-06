@@ -4,8 +4,221 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bba10e906601de786a065047b73a2976",
+    "content-hash": "6aba51a74c709fc4b5c83d0e0e4adf0d",
     "packages": [
+        {
+            "name": "fluentdom/fluentdom",
+            "version": "7.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ThomasWeinert/FluentDOM.git",
+                "reference": "91038715a02e50255a289c0532acd6adbfc30bde"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ThomasWeinert/FluentDOM/zipball/91038715a02e50255a289c0532acd6adbfc30bde",
+                "reference": "91038715a02e50255a289c0532acd6adbfc30bde",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "php": ">=7.0"
+            },
+            "suggest": {
+                "ext-json": "JSON support, needed for several loaders/serializers",
+                "ext-xmlreader": "XMLReader, XML pull parser, read large XMLs",
+                "ext-xmlwriter": "XMLWriter, Write large XMLs",
+                "fluentdom/css-selector": "Allows to use css selectors."
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/FluentDOM.php"
+                ],
+                "psr-4": {
+                    "FluentDOM\\": "src/FluentDOM"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "FluentDOM Contributors",
+                    "homepage": "https://github.com/FluentDOM/FluentDOM/contributors"
+                }
+            ],
+            "description": "A fluent api for the php dom extension.",
+            "homepage": "http://fluentdom.org",
+            "keywords": [
+                "XMLReader",
+                "XMLWriter",
+                "Xpath",
+                "dom",
+                "jquery",
+                "xml"
+            ],
+            "time": "2018-11-11T13:47:41+00:00"
+        },
+        {
+            "name": "libero/api-problem-bundle",
+            "version": "v0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/libero/api-problem-bundle.git",
+                "reference": "0dfaf76c132150aa47390a999c4f0e7de38a4dbc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/libero/api-problem-bundle/zipball/0dfaf76c132150aa47390a999c4f0e7de38a4dbc",
+                "reference": "0dfaf76c132150aa47390a999c4f0e7de38a4dbc",
+                "shasum": ""
+            },
+            "require": {
+                "fluentdom/fluentdom": "^7.0",
+                "php": "^7.2",
+                "psr/log": "^1.0",
+                "symfony/config": "^3.4 || ^4.0",
+                "symfony/dependency-injection": "^3.4 || ^4.0",
+                "symfony/event-dispatcher": "^3.4 || ^4.0",
+                "symfony/http-foundation": "^3.4 || ^4.0",
+                "symfony/http-kernel": "^3.4 || ^4.0"
+            },
+            "require-dev": {
+                "libero/coding-standard": "^0.3",
+                "phpstan/phpstan": "^0.10",
+                "phpstan/phpstan-phpunit": "^0.10",
+                "phpunit/phpunit": "^7.2",
+                "symfony/debug": "^3.4 || ^4.0",
+                "symfony/framework-bundle": "^3.4 || ^4.0",
+                "symfony/routing": "^3.4 || ^4.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Libero\\ApiProblemBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Implements the Libero API error standard",
+            "time": "2019-02-20T11:12:06+00:00"
+        },
+        {
+            "name": "libero/content-api-bundle",
+            "version": "v0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/libero/content-api-bundle.git",
+                "reference": "b90d1b7c3a7bb1ca1b10fc944f8e5d10400d6dee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/libero/content-api-bundle/zipball/b90d1b7c3a7bb1ca1b10fc944f8e5d10400d6dee",
+                "reference": "b90d1b7c3a7bb1ca1b10fc944f8e5d10400d6dee",
+                "shasum": ""
+            },
+            "require": {
+                "fluentdom/fluentdom": "^7.0",
+                "libero/ping-controller": "^0.1",
+                "php": "^7.2",
+                "symfony/config": "^3.4 || ^4.0",
+                "symfony/dependency-injection": "^3.4 || ^4.0",
+                "symfony/framework-bundle": "^3.4 || ^4.0",
+                "symfony/http-foundation": "^3.4.13 || ^4.0",
+                "symfony/http-kernel": "^3.4 || ^4.0",
+                "symfony/routing": "^3.4 || ^4.0"
+            },
+            "require-dev": {
+                "doctrine/dbal": "^2.8",
+                "libero/api-problem-bundle": "^0.1",
+                "libero/coding-standard": "^0.3",
+                "libero/content-negotiation-bundle": "^0.1",
+                "php-vfs/php-vfs": "^1.4",
+                "phpstan/phpstan": "^0.10",
+                "phpstan/phpstan-phpunit": "^0.10",
+                "phpunit/phpunit": "^7.2",
+                "symfony/console": "^3.4 || ^4.0",
+                "symfony/filesystem": "^3.4 || ^4.0",
+                "symfony/translation": "^3.4 || ^4.0"
+            },
+            "suggest": {
+                "doctrine/dbal": "To use the DoctrineItems adapter",
+                "libero/api-problem-bundle": "To have exceptions converted to API problems",
+                "libero/content-negotiation-bundle": "To enable content negotiation",
+                "symfony/filesystem": "To use the FilesystemItems adapter",
+                "symfony/translation": "To have exceptions converted to API problems"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Libero\\ContentApiBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Implements the Libero content API",
+            "time": "2019-03-04T13:10:14+00:00"
+        },
+        {
+            "name": "libero/ping-controller",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/libero/ping-controller.git",
+                "reference": "438e5042c3c1f651e6eb8ad05600606b76bc14a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/libero/ping-controller/zipball/438e5042c3c1f651e6eb8ad05600606b76bc14a5",
+                "reference": "438e5042c3c1f651e6eb8ad05600606b76bc14a5",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2",
+                "psr/log": "^1.0",
+                "symfony/http-foundation": "^3.4 || ^4.0"
+            },
+            "require-dev": {
+                "libero/coding-standard": "^0.2",
+                "phpstan/phpstan": "^0.10",
+                "phpstan/phpstan-phpunit": "^0.10",
+                "phpunit/phpunit": "^7.2",
+                "symfony/debug": "^3.4 || ^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Libero\\PingController\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Ping controller for a Libero API",
+            "time": "2018-10-17T13:09:32+00:00"
+        },
         {
             "name": "monolog/monolog",
             "version": "1.24.0",
@@ -895,16 +1108,16 @@
         },
         {
             "name": "symfony/framework-bundle",
-            "version": "v4.2.3",
+            "version": "v4.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/framework-bundle.git",
-                "reference": "5707ad22d7dcf39643128e73a85efc0f20745b44"
+                "reference": "50227854eb9863a1cae38952baff4d80953e7336"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/framework-bundle/zipball/5707ad22d7dcf39643128e73a85efc0f20745b44",
-                "reference": "5707ad22d7dcf39643128e73a85efc0f20745b44",
+                "url": "https://api.github.com/repos/symfony/framework-bundle/zipball/50227854eb9863a1cae38952baff4d80953e7336",
+                "reference": "50227854eb9863a1cae38952baff4d80953e7336",
                 "shasum": ""
             },
             "require": {
@@ -1010,7 +1223,7 @@
             ],
             "description": "Symfony FrameworkBundle",
             "homepage": "https://symfony.com",
-            "time": "2019-01-29T09:49:29+00:00"
+            "time": "2019-02-24T02:12:10+00:00"
         },
         {
             "name": "symfony/http-foundation",
@@ -1362,6 +1575,79 @@
                 "url"
             ],
             "time": "2019-01-29T09:49:29+00:00"
+        },
+        {
+            "name": "symfony/translation",
+            "version": "v4.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/translation.git",
+                "reference": "23fd7aac70d99a17a8e6473a41fec8fab3331050"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/23fd7aac70d99a17a8e6473a41fec8fab3331050",
+                "reference": "23fd7aac70d99a17a8e6473a41fec8fab3331050",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3",
+                "symfony/contracts": "^1.0.2",
+                "symfony/polyfill-mbstring": "~1.0"
+            },
+            "conflict": {
+                "symfony/config": "<3.4",
+                "symfony/dependency-injection": "<3.4",
+                "symfony/yaml": "<3.4"
+            },
+            "provide": {
+                "symfony/translation-contracts-implementation": "1.0"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/config": "~3.4|~4.0",
+                "symfony/console": "~3.4|~4.0",
+                "symfony/dependency-injection": "~3.4|~4.0",
+                "symfony/finder": "~2.8|~3.0|~4.0",
+                "symfony/intl": "~3.4|~4.0",
+                "symfony/yaml": "~3.4|~4.0"
+            },
+            "suggest": {
+                "psr/log-implementation": "To use logging capability in translator",
+                "symfony/config": "",
+                "symfony/yaml": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Translation\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Translation Component",
+            "homepage": "https://symfony.com",
+            "time": "2019-01-27T23:11:39+00:00"
         },
         {
             "name": "symfony/var-exporter",
@@ -2860,16 +3146,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "7.0.2",
+            "version": "7.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "cfca9c5f7f2694ca0c7749ffb142927d9f05250f"
+                "reference": "0317a769a81845c390e19684d9ba25d7f6aa4707"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/cfca9c5f7f2694ca0c7749ffb142927d9f05250f",
-                "reference": "cfca9c5f7f2694ca0c7749ffb142927d9f05250f",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/0317a769a81845c390e19684d9ba25d7f6aa4707",
+                "reference": "0317a769a81845c390e19684d9ba25d7f6aa4707",
                 "shasum": ""
             },
             "require": {
@@ -2919,7 +3205,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2019-02-15T13:40:27+00:00"
+            "time": "2019-02-26T07:38:26+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -3014,16 +3300,16 @@
         },
         {
             "name": "phpunit/php-timer",
-            "version": "2.0.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-timer.git",
-                "reference": "8b8454ea6958c3dee38453d3bd571e023108c91f"
+                "reference": "8b389aebe1b8b0578430bda0c7c95a829608e059"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/8b8454ea6958c3dee38453d3bd571e023108c91f",
-                "reference": "8b8454ea6958c3dee38453d3bd571e023108c91f",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/8b389aebe1b8b0578430bda0c7c95a829608e059",
+                "reference": "8b389aebe1b8b0578430bda0c7c95a829608e059",
                 "shasum": ""
             },
             "require": {
@@ -3035,7 +3321,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0-dev"
+                    "dev-master": "2.1-dev"
                 }
             },
             "autoload": {
@@ -3059,7 +3345,7 @@
             "keywords": [
                 "timer"
             ],
-            "time": "2018-02-01T13:07:23+00:00"
+            "time": "2019-02-20T10:12:59+00:00"
         },
         {
             "name": "phpunit/php-token-stream",
@@ -4203,6 +4489,46 @@
             "time": "2017-04-07T12:08:54+00:00"
         },
         {
+            "name": "thomasweinert/phpunit-xpath-assertions",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ThomasWeinert/phpunit-xpath-assertions.git",
+                "reference": "ed30e70a9b51a3059e918c5f6e6f8e39953a7b0b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ThomasWeinert/phpunit-xpath-assertions/zipball/ed30e70a9b51a3059e918c5f6e6f8e39953a7b0b",
+                "reference": "ed30e70a9b51a3059e918c5f6e6f8e39953a7b0b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-json": "*",
+                "php": "^7.1",
+                "phpunit/phpunit": "^7.0 || ^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Weinert",
+                    "email": "thomas@weinert.info",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Xpath assertions and constraints for PHPUnit",
+            "time": "2019-02-21T16:23:09+00:00"
+        },
+        {
             "name": "twig/twig",
             "version": "v2.6.2",
             "source": {
@@ -4323,7 +4649,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "thomasweinert/phpunit-xpath-assertions": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
