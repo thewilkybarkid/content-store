@@ -11,6 +11,7 @@ services:
         public: false
 
     libero.content_store.items:
-        class: Libero\ContentApiBundle\Adapter\FilesystemItems
+        class: Libero\ContentApiBundle\Adapter\DoctrineItems
         arguments:
-            - '%kernel.data_dir%'
+            - '@doctrine.dbal.default_connection'
+            - 'items'

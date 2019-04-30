@@ -1,7 +1,10 @@
 version: '3.4'
 
 services:
+    db:
+        image: postgres:11.2-alpine
     app:
+        &app
         build:
             context: .
             target: prod
@@ -9,9 +12,13 @@ services:
             APP_SECRET:
             DEFAULT_LOCALE:
             SERVICE_NAME:
+            DATABASE_URL: pgsql://postgres:@db:5432/postgres
         image: libero/content-store:${IMAGE_TAG:-master}
-        volumes:
-            - ./.docker/data:/app/data/
+        depends_on:
+            - db
+    db-schema:
+        <<: *app
+        command: bin/console doctrine:migrations:migrate --no-interaction
     web:
         image: nginx:1.15.8-alpine
         volumes:

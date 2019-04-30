@@ -4,14 +4,18 @@ declare(strict_types=1);
 
 namespace Libero\ContentStore;
 
+use Doctrine\DBAL\Schema\Schema;
+use Doctrine\Migrations\Provider\StubSchemaProvider;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\Config\Resource\FileResource;
+use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\HttpKernel\Kernel as BaseKernel;
 use Symfony\Component\Routing\RouteCollectionBuilder;
 
-final class Kernel extends BaseKernel
+final class Kernel extends BaseKernel implements CompilerPassInterface
 {
     use MicroKernelTrait;
 
@@ -38,6 +42,20 @@ final class Kernel extends BaseKernel
                 yield new $class();
             }
         }
+    }
+
+    public function process(ContainerBuilder $container) : void
+    {
+        $diffCommand = $container->findDefinition('doctrine_migrations.diff_command');
+        $doctrineItems = $container->findDefinition('libero.content_store.items');
+
+        $schema = new Definition(Schema::class);
+        $schema->setFactory([$doctrineItems, 'getSchema']);
+
+        $schemaProvider = new Definition(StubSchemaProvider::class);
+        $schemaProvider->setArgument(0, $schema);
+
+        $diffCommand->setArgument(0, $schemaProvider);
     }
 
     protected function configureContainer(ContainerBuilder $container, LoaderInterface $loader) : void
