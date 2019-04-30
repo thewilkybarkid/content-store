@@ -76,7 +76,6 @@ final class ContentServiceTest extends KernelTestCase
 
     /**
      * @test
-     * @
      */
     public function it_gets_an_item() : void
     {
