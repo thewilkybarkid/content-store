@@ -28,18 +28,9 @@ ENV APP_ENV=prod
 RUN mkdir var && \
     chown www-data:www-data var
 
-RUN apk add --no-cache --virtual .build-deps $PHPIZE_DEPS && \
-    apk add --no-cache \
-        postgresql-dev \
-        postgresql-libs \
-    && \
-    docker-php-ext-install \
-        opcache \
-        pdo_pgsql \
-    && \
-    apk del \
-        .build-deps \
-        postgresql-dev \
+RUN apk add --no-cache \
+        php7-opcache \
+        php7-pdo_pgsql \
     && \
     rm -rf /var/cache/apk/
 
